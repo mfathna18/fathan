@@ -3,32 +3,301 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Blog</title>
+    <title>Blog - Student Exchange Program</title>
     <style>
-        body { font-family: Arial, sans-serif; }
-        .gallery { display: flex; flex-wrap: wrap; }
-        .gallery img { max-width: 200px; margin: 5px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: #2d1b4e;
+            color: #e0e0e0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+        }
+        header {
+            background-color: #1a0f2e;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #9d4edd;
+        }
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        nav a {
+            color: #e0e0e0;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #9d4edd;
+        }
+        .hero-section {
+            background: linear-gradient(135deg, #3c096c 0%, #5a189a 100%);
+            padding: 80px 20px;
+            text-align: center;
+            margin-bottom: 50px;
+        }
+        .hero-section h1 {
+            font-size: 48px;
+            margin-bottom: 10px;
+            color: #e0aaff;
+        }
+        .hero-section p {
+            font-size: 18px;
+            color: #c77dff;
+        }
+        .blog-container {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        .blog-post {
+            background-color: #3c096c;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .blog-post:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(157, 78, 221, 0.3);
+        }
+        .blog-post-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .blog-post-content {
+            padding: 25px;
+        }
+        .blog-post h2 {
+            color: #e0aaff;
+            margin-bottom: 10px;
+            font-size: 28px;
+        }
+        .blog-date {
+            color: #9d4edd;
+            font-size: 14px;
+            margin-bottom: 15px;
+        }
+        .blog-post p {
+            color: #d0d0d0;
+            margin-bottom: 15px;
+        }
+        .read-more {
+            display: inline-block;
+            color: #9d4edd;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+        .read-more:hover {
+            color: #e0aaff;
+        }
+        .gallery-section {
+            margin-bottom: 50px;
+        }
+        .gallery-section h2 {
+            text-align: center;
+            color: #e0aaff;
+            font-size: 36px;
+            margin-bottom: 40px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+        .gallery-item:hover {
+            transform: scale(1.05);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-item-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            color: white;
+            padding: 15px;
+            font-weight: bold;
+        }
+        footer {
+            background-color: #1a0f2e;
+            color: #9d4edd;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 50px;
+            border-top: 1px solid #3c096c;
+        }
+        footer a {
+            color: #9d4edd;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+        footer a:hover {
+            color: #e0aaff;
+        }
     </style>
 </head>
 <body>
-    <h1>My Blog</h1>
-    <h2>Blog Posts</h2>
-    <article>
-        <h3>Blog Post Title 1</h3>
-        <p>Content for the first blog post goes here. This is where you'll discuss your thoughts or experiences.</p>
-        <p><em>Posted on: 2026-03-05</em></p>
-    </article>
-    <article>
-        <h3>Blog Post Title 2</h3>
-        <p>Content for the second blog post goes here. This is an opportunity to share more information or stories.</p>
-        <p><em>Posted on: 2026-03-05</em></p>
-    </article>
-    <h2>Photo Gallery</h2>
-    <div class="gallery">
-        <img src="path/to/photo1.jpg" alt="Photo 1">
-        <img src="path/to/photo2.jpg" alt="Photo 2">
-        <img src="path/to/photo3.jpg" alt="Photo 3">
-        <img src="path/to/photo4.jpg" alt="Photo 4">
-    </div>
+    <!-- Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">✨ Student Exchange</div>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>My Student Exchange Journey</h1>
+            <p>Stories, experiences, and memories from my time in the Philippines</p>
+        </div>
+    </section>
+
+    <!-- Blog Posts -->
+    <section class="blog-container">
+        <div class="container">
+            <article class="blog-post">
+                <img src="https://via.placeholder.com/800x300?text=First+Week+Adventures" alt="First Week in Philippines" class="blog-post-image">
+                <div class="blog-post-content">
+                    <h2>First Week Adventures in Manila</h2>
+                    <div class="blog-date">📅 March 1, 2026</div>
+                    <p>My first week in the Philippines has been absolutely incredible! From the moment I arrived at the airport, I was greeted with warm smiles and the vibrant energy of Manila. I've been exploring the local markets, trying authentic Filipino cuisine, and making new friends from all around the world...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="https://via.placeholder.com/800x300?text=Cultural+Immersion" alt="Cultural Immersion" class="blog-post-image">
+                <div class="blog-post-content">
+                    <h2>Deep Dive into Filipino Culture</h2>
+                    <div class="blog-date">📅 February 28, 2026</div>
+                    <p>Understanding a culture goes beyond just observing it—you have to live it. This week, I participated in a traditional barangay fiesta and experienced the incredible sense of community that defines Filipino society. The celebration, the food, the music, and the genuine kindness of the people left a lasting impression on me...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="https://via.placeholder.com/800x300?text=Community+Service" alt="Community Service" class="blog-post-image">
+                <div class="blog-post-content">
+                    <h2>Making a Difference Through Volunteer Work</h2>
+                    <div class="blog-date">📅 February 25, 2026</div>
+                    <p>One of the most rewarding aspects of this exchange program has been the opportunity to give back to the community. I've been volunteering at a local school, helping with English lessons and tutoring students. The enthusiasm and eagerness to learn from these children has been truly inspiring and humbling...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+
+            <article class="blog-post">
+                <img src="https://via.placeholder.com/800x300?text=Island+Hopping" alt="Island Hopping" class="blog-post-image">
+                <div class="blog-post-content">
+                    <h2>Island Hopping Adventure: Palawan's Hidden Gems</h2>
+                    <div class="blog-date">📅 February 20, 2026</div>
+                    <p>Last weekend, I had the opportunity to explore some of Palawan's most beautiful islands. Crystal clear waters, pristine beaches, and breathtaking landscapes made this one of the most memorable trips of my life. I visited El Nido and discovered hidden lagoons that seemed straight out of a dream...</p>
+                    <a href="#" class="read-more">Read More →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+        <div class="container">
+            <h2>📸 Photo Gallery</h2>
+            <div class="gallery">
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Manila+Skyline" alt="Manila Skyline">
+                    <div class="gallery-item-title">Manila Skyline</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Local+Market" alt="Local Market">
+                    <div class="gallery-item-title">Local Market</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Beach+Sunset" alt="Beach Sunset">
+                    <div class="gallery-item-title">Beach Sunset</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=School+Students" alt="School Students">
+                    <div class="gallery-item-title">School Students</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Local+Festival" alt="Local Festival">
+                    <div class="gallery-item-title">Local Festival</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Traditional+Food" alt="Traditional Food">
+                    <div class="gallery-item-title">Traditional Food</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Island+Paradise" alt="Island Paradise">
+                    <div class="gallery-item-title">Island Paradise</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://via.placeholder.com/300x300?text=Friend+Group" alt="Friend Group">
+                    <div class="gallery-item-title">Friend Group</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 Student Exchange Program. All rights reserved.</p>
+            <div>
+                <a href="about.html">About Me</a>
+                <a href="contact.html">Contact</a>
+                <a href="index.html">Home</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
