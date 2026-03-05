@@ -1,0 +1,11 @@
+# Node modules
+node_modules/
+
+# macOS
+.DS_Store
+
+# IDE files
+*.sublime-project
+*.sublime-workspace
+*.idea/
+*.vscode/
